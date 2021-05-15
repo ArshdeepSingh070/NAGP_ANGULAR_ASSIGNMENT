@@ -9,7 +9,7 @@ import { Product } from '../interface/product';
 })
 export class ProductService {
 
-  private PRODUCT_SERVICE_BASE_URL = "/assets/templates";
+  private PRODUCT_SERVICE_BASE_URL = "/assets/template";
 
   constructor(private readonly httpClient : HttpClient) { }
 

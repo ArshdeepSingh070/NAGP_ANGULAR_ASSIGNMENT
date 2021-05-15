@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { SearchComponent } from './search/search.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { CartComponent } from './cart/cart.component';
-import { CheckoutComponent } from './checkout/checkout.component';
-import { MainPageComponent } from './main-page/main-page.component';
+import { LoginComponent } from './pages/login/login.component';
+import { SearchComponent } from './components/search/search.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { StorefrontRoutingModule } from './storefront.routing.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { MensWearComponent } from './components/mens-wear/mens-wear.component';
+import { WomenWearComponent } from './components/women-wear/women-wear.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
 
 const components = [
     LoginComponent,
@@ -20,7 +26,13 @@ const components = [
     CartComponent,
     CheckoutComponent,
     MainPageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    NavBarComponent,
+    HomePageComponent,
+    MensWearComponent,
+    WomenWearComponent,
+    OrderConfirmationComponent
+
 ];
 
 @NgModule({
@@ -28,7 +40,9 @@ const components = [
   imports: [
     CommonModule,
     SharedModule,
-    StorefrontRoutingModule
+    StorefrontRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     components

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/core/service/login.service';
 
 @Component({
   selector: 'ecom-header',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isLoggedInUser: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private readonly router : Router , private loginService : LoginService) { }
+
+  ngOnInit(){
+    this.loginService.isLoggedIn.subscribe((value)=> this.isLoggedInUser = value);
+  }
+
+  logoutUser() {
+    this.loginService.isLoggedIn.next(false);
+    this.router.navigateByUrl('/login');
   }
 
 }

@@ -1,0 +1,88 @@
+<div>
+  <nav class="navbar navbar-expand-sm bg-light">
+    <div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/mens']"
+            style="color: crimson"
+            >Mens wear</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/women']"
+            style="color: crimson"
+            >Women wear</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="navbar-nav ml-auto pull-right">
+        <li class="nav-item" *ngIf="isLoggedInUser">
+          <a class="nav-link" [routerLink]="['/cart']"
+            ><i class="pi pi-sign-out"></i
+            ><span style="margin-left: 4px">Cart </span></a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+<ecom-search></ecom-search>
+
+<!-- <div class="card-group">
+  <div *ngFor="let product of productsList">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text brand">{{ product.brand }}</p>
+        <p class="card-text brand">{{ product.gender }}</p>
+        <button class="btn btn-secondary btn-view-product" (click)="viewProduct(product.id)">View Product</button>
+        </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="products__container">
+  <ng-container *ngFor="let product of productsList">
+    <section class="product__item">
+      <div>
+        <a [routerLink]="['/product/' + product.id]">
+          <ng-container *ngIf="product.image">
+            <figure class="product__figure">
+              <img
+                *ngIf="product.image"
+                width="640px"
+                class="product__image"
+                [src]="product.image"
+                alt=""
+              />
+            </figure>
+          </ng-container>
+
+          <div class="product__content">
+            <strong class="product__title">{{ product.name }}</strong>
+
+            <em class="product__price">{{
+              product.price | currency: "EUR"
+            }}</em>
+          </div>
+        </a>
+        <button
+          class="btn btn-secondary btn-view-product"
+          (click)="viewProduct(product.id)"
+        >
+          View Product
+        </button>
+      </div>
+    </section>
+  </ng-container>
+</div>

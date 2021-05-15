@@ -1,13 +1,21 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { ProductService } from "../core/service/product.service";
-import { LoginComponent } from "./login/login.component";
-import { MainPageComponent } from "./main-page/main-page.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { ProductDetailComponent } from "./product-detail/product-detail.component";
-import { ProductListComponent } from "./product-list/product-list.component";
+import { CheckoutComponent } from "./pages/checkout/checkout.component";
+import { AuthGuard } from "./guards/auth.guard";
+import { LoginComponent } from "./pages/login/login.component";
+import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
+import { ProductDetailComponent } from "./pages/product-detail/product-detail.component";
+import { ProductListComponent } from "./pages/product-list/product-list.component";
 import { ProductResolver } from "./resolver/product.resolver";
 import { ProductsResolver } from "./resolver/products.resolver";
+import { HomePageComponent } from "./pages/home-page/home-page.component";
+import { CartComponent } from "./pages/cart/cart.component";
+import { MensWearComponent } from "./components/mens-wear/mens-wear.component";
+import { MensWearResolver } from "./resolver/mens-wear.resolver";
+import { WomenWearComponent } from "./components/women-wear/women-wear.component";
+import { WomenWearResolver } from "./resolver/women-wear.resolver";
+import { OrderConfirmationComponent } from "./components/order-confirmation/order-confirmation.component";
 
 const routes: Routes = [
   {
@@ -16,20 +24,51 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: MainPageComponent,
-    children: [
-      {
-        path: 'products', component: ProductListComponent, resolve: {
-          productsList: ProductsResolver
-        }
-      },
-      {
-        path: 'products/:productId' , component: ProductDetailComponent, resolve: {
-          product: ProductResolver
-        }
-      }
-    ]
+    component: HomePageComponent
+  },
+  {
+    path: 'products',
+    component: ProductListComponent,
+    resolve: {
+      productsList: ProductsResolver
+    }
+  },
+  {
+    path: 'mens',
+    component: MensWearComponent,
+    resolve: {
+      menProductsList: MensWearResolver
+    }
+   },
+  {
+    path: 'women',
+    component: WomenWearComponent,
+    resolve: {
+      womenProductsList: WomenWearResolver
+    }
+  },
+  {
+    path: 'product/:productId',
+    component: ProductDetailComponent,
+    resolve: {
+      product: ProductResolver
+    }
 
+  },
+  {
+    path: 'cart',
+    canActivate: [AuthGuard],
+    component: CartComponent
+  },
+  {
+    path: 'checkout',
+    canActivate: [AuthGuard],
+    component: CheckoutComponent
+  },
+  {
+    path: 'orderConfirmation',
+    canActivate: [AuthGuard],
+    component: OrderConfirmationComponent
   },
   {
     path: '',

@@ -4,34 +4,44 @@
     "name": "M31 Dual Sim Phone",
     "brand": "Samsung",
     "color": "Navy Blue",
-    "price": 15000
+    "price": 15000,
+    "gender": "M",
+    "image": "assets/images/products_images/Product_1.jpg"
   },
   {
     "id": "2",
     "name": "T-Shirt",
     "brand": "Duke",
     "color": "Black",
-    "price": 800
+    "price": 800,
+    "gender": "M",
+    "image": "assets/images/products_images/Product_2.jpg"
   },
   {
     "id": "3",
     "name": "Sports Shoes",
     "brand": "Reebok",
     "color": "White",
-    "price": 3500
+    "price": 3500,
+    "gender": "W",
+    "image" : "assets/images/products_images/Product_5.jpg"
   },
   {
     "id": "4",
     "name": "Moto G6 Plus Phone",
     "brand": "Motorola",
     "color": "Black",
-    "price": 20000
+    "price": 20000,
+    "gender": "M",
+    "image": "assets/images/products_images/Product_3.jpg"
   },
   {
     "id": "5",
     "name": "Jacket",
     "brand": "Woodland",
     "color": "Black",
-    "price": 6000
+    "price": 6000,
+    "gender": "W",
+    "image" : "assets/images/products_images/Product_6.jpg"
   }
 ]

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {
   Router, Resolve,
@@ -14,10 +13,21 @@ import { ProductService } from 'src/app/core/service/product.service';
 })
 export class ProductResolver implements Resolve<Product> {
 
+  products : Product[] = [];
+  // product: any;
+  productId: any;
+
   constructor(private readonly productService: ProductService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product> {
-    const productId = route.paramMap.get('productId');
-   return this.productService.getProduct(productId != null ? productId : "");
+    this.productId = route.paramMap.get('productId');
+    this.productService.getProducts().subscribe((value)=> this.products = value);
+    //this.filterProduct(this.products , this.productId);
+   return this.productService.getProduct(this.productId != null ? this.productId : "");
   }
+
+  // filterProduct(products : Product[] , productId : string):{
+
+  //   //return products.find(prod => prod.id == productId);
+  // }
 }

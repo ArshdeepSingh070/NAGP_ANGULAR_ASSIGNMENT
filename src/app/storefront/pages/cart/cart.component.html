@@ -1,0 +1,89 @@
+<div class="card-header text-center">
+  {{ pageTitle }}
+</div>
+
+<!-- <div *ngIf="hasProduct">
+<div class="cart-item" *ngFor="let item of items">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{item.name}}</h5>
+    <p class="card-text brand">{{item.brand}}</p>
+    <p class="card-text">Price: {{item.price | currency: 'INR'}}</p>
+    <div class="text-center">
+      <button class="btn btn-primary" type="submit" (click)="removeProduct(item)">Remove</button>
+    </div>
+  </div>
+</div>
+</div> -->
+
+<div class="products__container">
+  <ng-container *ngFor="let item of items">
+    <section class="product__item">
+      <ng-container *ngIf="item.image">
+        <figure class="product__figure">
+          <img
+            *ngIf="item.image"
+            width="640px"
+            class="product__image"
+            [src]="item.image"
+            alt=""
+          />
+        </figure>
+      </ng-container>
+
+      <div class="product__content">
+        <strong class="product__title">{{ item.name }}</strong>
+
+        <em class="product__price">{{ item.price | currency: "EUR" }}</em>
+      </div>
+    </section>
+  </ng-container>
+</div>
+
+<div class="col-4 text-center" *ngIf="hasProduct">
+  <button class="btn btn-primary" type="submit" [routerLink]="['/checkout']">
+    Checkout
+  </button>
+</div>
+
+<div *ngIf="!hasProduct">
+  <div class="container image-404">
+    <img
+      class="logo"
+      src="/assets/images/empty-cart.png"
+      width="400"
+      height="600"
+    />
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h3 style="color: red">Please add product to your cart</h3>
+    </div>
+    <div>
+      <a
+        class="nav-link"
+        routerLinkActive="active"
+        [routerLink]="['/products']"
+        style="color: darkblue"
+        >Product List</a
+      >
+    </div>
+  </div>
+
+  <!-- <span>{{ items }}</span>
+<div *ngIf="items; else elseTemplate">
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency }}</span>
+  </div>
+  <div>
+    <button type="button" (click)="cleaCart()" class="register-register-button">
+      Clear Cart
+    </button>
+  </div>
+</div>
+<ng-template #elseTemplate>
+<span>No Product in Cart</span>
+</ng-template>
+</div> -->
+</div>
