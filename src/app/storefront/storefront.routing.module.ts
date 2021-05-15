@@ -41,7 +41,8 @@ const routes: Routes = [
     }
    },
   {
-    path: 'women',
+    //path: 'women',
+    path: 'products/:gender',
     component: WomenWearComponent,
     resolve: {
       womenProductsList: WomenWearResolver
@@ -51,18 +52,18 @@ const routes: Routes = [
     path: 'product/:productId',
     component: ProductDetailComponent,
     resolve: {
-      product: ProductResolver
+      productsList: ProductsResolver
     }
 
   },
   {
     path: 'cart',
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     component: CartComponent
   },
   {
     path: 'checkout',
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
     component: CheckoutComponent
   },
   {
@@ -72,7 +73,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'products',
     pathMatch: 'full'
   },
   {

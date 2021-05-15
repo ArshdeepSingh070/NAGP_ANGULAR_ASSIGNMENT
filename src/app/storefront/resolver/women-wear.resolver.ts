@@ -15,6 +15,6 @@ export class WomenWearResolver implements Resolve<Product[]> {
 
   constructor(private productServie :  ProductService){}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product[]> {
-    return this.productServie.getProducts();
+    return this.productServie.getWomenProducts();
   }
 }

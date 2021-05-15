@@ -13,21 +13,20 @@
           type="text"
           placeholder="Enter Name"
           formControlName="name"
-        />
-        <!-- [ngClass]="{
+          [ngClass]="{
             'is-invalid':
               (checkoutForm.get('name').touched || checkoutForm.get('name').dirty) &&
               !checkoutForm.get('name').valid
-          }" -->
-
-        <!-- <span class="invalid-feedback">
+          }"
+        />
+        <span class="invalid-feedback">
           <span *ngIf="checkoutForm.get('name').errors?.required">
             Please enter your name.
           </span>
           <span *ngIf="checkoutForm.get('name').errors?.minlength">
             Name must be longer than 5 characters.
           </span>
-        </span> -->
+        </span>
       </div>
     </div>
 
@@ -40,7 +39,18 @@
           type="text"
           placeholder="Enter Address"
           formControlName="address"
+          [ngClass]="{
+            'is-invalid':
+              (checkoutForm.controls.address.touched ||
+              checkoutForm.controls.address.dirty) &&
+              !checkoutForm.controls.address.valid
+          }"
         />
+        <span class="invalid-feedback">
+          <span *ngIf="checkoutForm.controls.address.errors?.required">
+            Please enter your delivery address.
+          </span>
+        </span>
       </div>
     </div>
 
@@ -66,7 +76,18 @@
           type="text"
           placeholder="Enter Email"
           formControlName="email"
+          [ngClass]="{
+            'is-invalid':
+              (checkoutForm.controls.email.touched ||
+              checkoutForm.controls.email.dirty) &&
+              !checkoutForm.controls.email.valid
+          }"
         />
+        <span class="invalid-feedback">
+          <span *ngIf="checkoutForm.controls.email.errors?.required">
+            Please enter your email address.
+          </span>
+        </span>
       </div>
     </div>
     <div class="text-center">

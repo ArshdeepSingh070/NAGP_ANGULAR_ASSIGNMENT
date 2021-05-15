@@ -1,3 +1,4 @@
+<div class="pb-5">
 <div class="card-header text-center">
   {{ pageTitle }}
 </div>
@@ -14,7 +15,7 @@
   </div>
 </div> -->
 
-<ng-container *ngIf="product">
+<!-- <ng-container *ngIf="product">
   <section class="product__item">
     <h1 class="product__title">{{ product.name }}</h1>
 
@@ -47,13 +48,31 @@
       </button>
     </footer>
   </section>
-</ng-container>
+</ng-container> -->
+
+<mat-card class="ecom-card m-auto" *ngIf="product">
+  <mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image class="image-cls" [src]="product.image" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="addToCart(product)">Add to cart</button>
+  </mat-card-actions>
+</mat-card>
+
 
 <div class="text-center" *ngIf="isProductAdded">
   <div>
-    <h3>Product added to cart</h3>
+    <div class="alert alert-primary" role="alert">
+      Product added to cart
+    </div>
   </div>
   <button class="btn btn-primary" [routerLink]="['/cart']" type="submit">
     View Cart
   </button>
+</div>
 </div>

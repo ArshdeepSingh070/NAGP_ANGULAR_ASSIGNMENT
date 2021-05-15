@@ -10,20 +10,20 @@ import { CartService } from 'src/app/core/service/cart.service';
 export class CheckoutComponent implements OnInit {
 
   pageTitle: string = "GO FOR CHECKOUT";
+  checkoutForm : any;
 
-  checkoutForm = this.formBuilder.group({
-    name: ["", [Validators.required, Validators.minLength(5)]],
-    address: ["", Validators.required],
-    phoneNo: ["", Validators.required],
-    email: ["", Validators.required]
-  });
 
   constructor(
     private formBuilder : FormBuilder , private cartService : CartService
   ) { }
 
-  ngOnInit(): void {
-
+  ngOnInit() {
+    this.checkoutForm = this.formBuilder.group({
+      name: ["", [Validators.required, Validators.minLength(5)]],
+      address: ["", Validators.required],
+      phoneNo: ["", Validators.required],
+      email: ["", Validators.required]
+    });
   }
 
   onSubmit(): void {

@@ -15,7 +15,7 @@
           <a
             class="nav-link"
             routerLinkActive="active"
-            [routerLink]="['/women']"
+            [routerLink]="['/products/W']"
             style="color: crimson"
             >Women wear</a
           >
@@ -34,9 +34,6 @@
     </div>
   </nav>
 </div>
-<!-- <router-outlet></router-outlet> -->
-
-<ecom-search></ecom-search>
 
 <!-- <div class="card-group">
   <div *ngFor="let product of productsList">
@@ -51,7 +48,7 @@
   </div>
 </div> -->
 
-<div class="products__container">
+<!-- <div class="products__container">
   <ng-container *ngFor="let product of productsList">
     <section class="product__item">
       <div>
@@ -85,4 +82,23 @@
       </div>
     </section>
   </ng-container>
+</div> -->
+
+
+<div class="products__container">
+<div *ngFor="let product of productsList">
+<mat-card class="ecom-card m-auto" [routerLink]="['/product/' + product.id]">
+  <mat-card-header>
+    <mat-card-title>{{ product.name }}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image class="image-cls" [src]="product.image" alt="">
+  <mat-card-content>
+    <p>
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color ="primary" (click)="viewProduct(product.id)">VIEW</button>
+  </mat-card-actions>
+</mat-card>
+</div>
 </div>

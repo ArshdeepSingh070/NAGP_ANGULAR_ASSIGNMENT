@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/core/service/product.service';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductResolver implements Resolve<Product> {
+export class ProductResolver implements Resolve<Product[]> {
 
   products : Product[] = [];
   // product: any;
@@ -19,15 +19,20 @@ export class ProductResolver implements Resolve<Product> {
 
   constructor(private readonly productService: ProductService){}
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product> {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Product[]> {
     this.productId = route.paramMap.get('productId');
-    this.productService.getProducts().subscribe((value)=> this.products = value);
-    //this.filterProduct(this.products , this.productId);
-   return this.productService.getProduct(this.productId != null ? this.productId : "");
+
+    // // this.productService.getProducts().subscribe((value)=> {
+    // //   this.products = value;
+    // //   this.filterProduct(this.products , this.productId);
+    // // }
+    // // );
+    // this.productService.getProducts().toPromise()
+   return this.productService.getProducts();
   }
 
-  // filterProduct(products : Product[] , productId : string):{
+  // filterProduct(products : Product[] , productId : string): Product | undefined{
 
-  //   //return products.find(prod => prod.id == productId);
+  //   return products.find(prod => prod.id == productId);
   // }
 }

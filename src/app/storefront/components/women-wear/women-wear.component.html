@@ -17,7 +17,7 @@
   </div>
 </div> -->
 
-<div class="products__container">
+<!-- <div class="products__container">
   <ng-container *ngFor="let product of productsList">
     <div *ngIf="product.gender == 'W'">
       <section class="product__item">
@@ -51,4 +51,26 @@
       </section>
     </div>
   </ng-container>
+</div> -->
+
+<div class="products__container">
+  <div *ngFor="let product of productsList">
+      <mat-card
+        class="ecom-card m-auto"
+        [routerLink]="['/product/' + product.id]"
+      >
+        <mat-card-header>
+          <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image class="image-cls" [src]="product.image" alt="" />
+        <mat-card-content>
+          <p></p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary" (click)="viewProduct(product.id)">
+            VIEW
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
 </div>

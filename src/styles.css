@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.products__container {
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
+.image-cls{
+  width:400px;
+  height: 400px;
+}
+
+
+.ecom-card {
+  max-width: 400px;
+}

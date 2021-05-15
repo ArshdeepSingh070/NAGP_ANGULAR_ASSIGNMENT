@@ -17,6 +17,18 @@ export class WomenWearComponent implements OnInit {
     this.route.data.subscribe(data =>{
      this.productsList = data.womenProductsList;
     })
+
+    this.route.data.subscribe(data =>{
+      this.productsList = data.womenProductsList;
+      this.route.params.subscribe((params)=>{
+        console.log(params);
+        var found = this.productsList.filter(product=> product.id ==params['gender']);
+        console.log(found);
+        if(found.length>0){
+          this.productsList = found;
+        }
+      });
+    })
   }
 
   viewProduct(productId: String){

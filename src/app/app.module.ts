@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StorefrontModule } from './storefront/storefront.module';
-//import {MatBadgeModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { StorefrontModule } from './storefront/storefront.module';
     CoreModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    StorefrontModule,
-    //MatBadgeModule
+    StorefrontModule
   ],
   providers: [],
   bootstrap: [AppComponent]

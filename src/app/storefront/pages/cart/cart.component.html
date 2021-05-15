@@ -17,57 +17,34 @@
 </div> -->
 
 <div class="products__container">
-  <ng-container *ngFor="let item of items">
-    <section class="product__item">
-      <ng-container *ngIf="item.image">
-        <figure class="product__figure">
-          <img
-            *ngIf="item.image"
-            width="640px"
-            class="product__image"
-            [src]="item.image"
-            alt=""
-          />
-        </figure>
-      </ng-container>
-
-      <div class="product__content">
-        <strong class="product__title">{{ item.name }}</strong>
-
-        <em class="product__price">{{ item.price | currency: "EUR" }}</em>
-      </div>
-    </section>
-  </ng-container>
+  <div *ngFor="let item of items">
+    <mat-card class="ecom-card m-auto">
+      <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="image-cls" [src]="item.image" alt="" />
+    </mat-card>
+  </div>
 </div>
 
-<div class="col-4 text-center" *ngIf="hasProduct">
-  <button class="btn btn-primary" type="submit" [routerLink]="['/checkout']">
+<div class="text-center" *ngIf="hasProduct">
+  <button class="btn btn-primary" [routerLink]="['/checkout']" type="submit">
     Checkout
   </button>
+  <h3>Total Price : {{ totalPrice }}</h3>
 </div>
 
-<div *ngIf="!hasProduct">
-  <div class="container image-404">
-    <img
-      class="logo"
-      src="/assets/images/empty-cart.png"
-      width="400"
-      height="600"
-    />
+<div class="text-center" *ngIf="!hasProduct">
+  <div class="container m-auto">
+    <h3 style="color: red">OOPS! YOUR CART IS EMPTY</h3>
   </div>
   <div class="card">
     <div class="card-body">
-      <h3 style="color: red">Please add product to your cart</h3>
+      <button class="btn btn-primary" [routerLink]="['/products']" type="submit">
+        Add Products
+      </button>
     </div>
-    <div>
-      <a
-        class="nav-link"
-        routerLinkActive="active"
-        [routerLink]="['/products']"
-        style="color: darkblue"
-        >Product List</a
-      >
-    </div>
+  </div>
   </div>
 
   <!-- <span>{{ items }}</span>
@@ -86,4 +63,3 @@
 <span>No Product in Cart</span>
 </ng-template>
 </div> -->
-</div>

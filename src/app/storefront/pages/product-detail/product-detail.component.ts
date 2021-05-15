@@ -11,15 +11,27 @@ import { CartService } from 'src/app/core/service/cart.service';
 export class ProductDetailComponent implements OnInit {
 
   pageTitle: string = "PRODUCT DETAILS"
-  product: any;
+  productId : string = "";
+  productsList: Product[] = [];
   isProductAdded: string = '';
+  product?:Product;
   constructor(private readonly route : ActivatedRoute , private cartService : CartService) { }
 
   ngOnInit(){
-    this.route.data.subscribe(data => {
-      console.log(data);
-      this.product = data.product;
+    this.route.data.subscribe(data =>{
+      this.productsList = data.productsList;
+      this.route.params.subscribe((params)=>{
+        console.log(params);
+        var found = this.productsList.filter(product=> product.id ==params['productId']);
+        console.log(found);
+        if(found.length>0){
+          this.product = found[0];
+        }
+      });
     })
+
+
+    //this.productId = route.paramMap.get('productId');
 
   }
 

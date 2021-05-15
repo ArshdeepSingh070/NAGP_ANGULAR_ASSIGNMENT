@@ -10,16 +10,20 @@ import { CartService } from 'src/app/core/service/cart.service';
 export class CartComponent implements OnInit {
 
   pageTitle: string = "CART PAGE";
-  totalPrice : string = "";
+  totalPrice ?: number ;
   hasProduct : boolean = false;
-
+  items = this.cartService.getItems();
   constructor(private cartService : CartService) { }
 
-  items = this.cartService.getItems();
+
 
   ngOnInit(): void {
+
     if(this.items.length > 0){
       this.hasProduct = true;
+      this.totalPrice = this.items.map(a=> +a.price).reduce((acc, current)=>{
+        return acc + current;
+      });
     }
   }
 

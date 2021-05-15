@@ -18,6 +18,11 @@ export class ProductService {
     return this.httpClient.get<Product[]>(url);
   }
 
+  public getWomenProducts(): Observable<Product[]> {
+    const url = `${this.PRODUCT_SERVICE_BASE_URL}/products.json`;
+    return this.httpClient.get<Product[]>(url);
+  }
+
   public getProduct(productId : String): Observable<Product>{
     const url = `${this.PRODUCT_SERVICE_BASE_URL}/product.json`;
     return this.httpClient.get<Product>(url);

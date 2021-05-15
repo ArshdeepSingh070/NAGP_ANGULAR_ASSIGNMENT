@@ -17,6 +17,13 @@ import { MensWearComponent } from './components/mens-wear/mens-wear.component';
 import { WomenWearComponent } from './components/women-wear/women-wear.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderConfirmationComponent } from './components/order-confirmation/order-confirmation.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatInputModule} from '@angular/material/input';
+
 
 const components = [
     LoginComponent,
@@ -42,7 +49,13 @@ const components = [
     SharedModule,
     StorefrontRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatBadgeModule,
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
+    MatInputModule
   ],
   exports: [
     components

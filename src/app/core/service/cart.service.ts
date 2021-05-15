@@ -23,7 +23,6 @@ export class CartService {
     this.items = [];
     console.warn('cart is cleard');
     //this.router.navigate(['/home']);
-    window.alert('Your cart is clear!');
     //return this.items;
   }
 
