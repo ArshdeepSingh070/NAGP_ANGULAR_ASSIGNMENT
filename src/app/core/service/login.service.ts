@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import {​​​​​​​​ BehaviorSubject, Observable }​​​​​​​​ from 'rxjs';
-import { HttpClient} from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { User } from '../interface/user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-
+  /**
+   * Determines whether user is logged in or not
+   */
   isLoggedIn = new BehaviorSubject<boolean>(false);
-  private PRODUCT_SERVICE_BASE_URL = "/assets/template";
+  private PRODUCT_SERVICE_BASE_URL = '/assets/template';
 
-  constructor(private readonly httpClient : HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) {}
 
   public getUsers(): Observable<User[]> {
     const url = `${this.PRODUCT_SERVICE_BASE_URL}/users.json`;

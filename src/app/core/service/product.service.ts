@@ -5,25 +5,19 @@ import { ProductsResolver } from 'src/app/storefront/resolver/products.resolver'
 import { Product } from '../interface/product';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  private PRODUCT_SERVICE_BASE_URL = '/assets/template';
 
-  private PRODUCT_SERVICE_BASE_URL = "/assets/template";
-
-  constructor(private readonly httpClient : HttpClient) { }
+  constructor(private readonly httpClient: HttpClient) {}
 
   public getProducts(): Observable<Product[]> {
     const url = `${this.PRODUCT_SERVICE_BASE_URL}/products.json`;
     return this.httpClient.get<Product[]>(url);
   }
 
-  public getWomenProducts(): Observable<Product[]> {
-    const url = `${this.PRODUCT_SERVICE_BASE_URL}/products.json`;
-    return this.httpClient.get<Product[]>(url);
-  }
-
-  public getProduct(productId : String): Observable<Product>{
+  public getProduct(productId: String): Observable<Product> {
     const url = `${this.PRODUCT_SERVICE_BASE_URL}/product.json`;
     return this.httpClient.get<Product>(url);
   }

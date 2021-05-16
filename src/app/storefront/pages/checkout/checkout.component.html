@@ -3,6 +3,9 @@
 </div>
 
 <div class="card-body">
+  <h3 style="color: green; font-style: normal; font-size: large">
+    Enter Personal Detail:
+  </h3>
   <form novalidate (ngSubmit)="onSubmit()" [formGroup]="checkoutForm">
     <div class="form-group row mb-2">
       <label class="col-md-2 col-form-label" for="txtName"> User Name </label>
@@ -15,7 +18,8 @@
           formControlName="name"
           [ngClass]="{
             'is-invalid':
-              (checkoutForm.get('name').touched || checkoutForm.get('name').dirty) &&
+              (checkoutForm.get('name').touched ||
+                checkoutForm.get('name').dirty) &&
               !checkoutForm.get('name').valid
           }"
         />
@@ -42,7 +46,7 @@
           [ngClass]="{
             'is-invalid':
               (checkoutForm.controls.address.touched ||
-              checkoutForm.controls.address.dirty) &&
+                checkoutForm.controls.address.dirty) &&
               !checkoutForm.controls.address.valid
           }"
         />
@@ -59,11 +63,25 @@
       <div class="col-md-8">
         <input
           class="form-control"
-          id="textEmail"
+          id="phoneNo"
           type="text"
           placeholder="Enter Phone No"
-          formControlName="phoneNO"
+          formControlName="phoneNo"
+          [ngClass]="{
+            'is-invalid':
+              (checkoutForm.controls.phoneNo.touched ||
+                checkoutForm.controls.phoneNo.dirty) &&
+              !checkoutForm.controls.phoneNo.valid
+          }"
         />
+        <span class="invalid-feedback">
+          <span *ngIf="checkoutForm.controls.phoneNo.errors?.required">
+            Please enter your phone number.
+          </span>
+          <span *ngIf="checkoutForm.controls.phoneNo.errors?.pattern">
+            Please enter correct phone number.
+          </span>
+        </span>
       </div>
     </div>
 
@@ -79,7 +97,7 @@
           [ngClass]="{
             'is-invalid':
               (checkoutForm.controls.email.touched ||
-              checkoutForm.controls.email.dirty) &&
+                checkoutForm.controls.email.dirty) &&
               !checkoutForm.controls.email.valid
           }"
         />
@@ -87,14 +105,17 @@
           <span *ngIf="checkoutForm.controls.email.errors?.required">
             Please enter your email address.
           </span>
+          <span *ngIf="checkoutForm.controls.email.errors?.email">
+            Please enter your email address in correct format.
+          </span>
         </span>
       </div>
     </div>
     <div class="text-center">
       <button
         class="btn btn-primary"
-        [routerLink]="['/orderConfirmation']"
         type="submit"
+        [disabled]="!checkoutForm.valid"
       >
         Place Order
       </button>

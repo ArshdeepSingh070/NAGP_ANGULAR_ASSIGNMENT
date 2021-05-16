@@ -1,80 +1,52 @@
-<!-- <div class="register-box">
-  <div class="container">
-    <div>
-      <span class="login-logo">
-        <i class="pi pi-user"></i>
-      </span>
-      <p class="register-title">User Login</p>
-    </div>
-    <form class="register-register-form">
-      <span class="icon-username">
-        <i class="pi pi-user"></i>
-      </span>
-      <fieldset class="register-input-container">
-        <div class="form-group" class="register-input-item">
-          <span class="ui-float-label">
-            <input
-              id="float-username"
-              type="text"
-              name="username"
-              class="register-user-input-username register-user-input"
-            />
-            <label for="float-username">Username</label>
-          </span>
-        </div>
-      </fieldset>
-      <span class="icon-password">
-        <i class="pi pi-lock"></i>
-      </span>
-      <fieldset class="register-input-container register-password">
-        <div class="form-group" class="register-input-item">
-          <span class="ui-float-label">
-            <input
-              id="float-password"
-              type="password"
-              name="password"
-              class="register-user-input-password register-user-input"
-            />
-            <label for="float-password">Password</label>
-          </span>
-        </div>
-      </fieldset>
-      <div class="register-register-button-container">
-        <button
-          type="button"
-          (click)="submitLoginForm()"
-          class="register-register-button"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  </div>
-</div> -->
 <div class="p-5">
-<mat-card class="ecom-card m-auto">
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="login-form">
-      <table cellspacing="0">
-        <tr>
-          <td>
-            <mat-form-field>
-            <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
-            </mat-form-field>
-          </td>
-        </tr>
-        <tr>
-        <td><mat-form-field>
-          <input matInput placeholder="Password" [(ngModel)]="password"type="password" name="password" required>
-        </mat-form-field></td>
-      </tr></table>
-    </form>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
-  </mat-card-actions>
-</mat-card>
+  <mat-card class="ecom-card m-auto">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="login-form">
+        <table cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Username"
+                  [(ngModel)]="username"
+                  name="username"
+                  required
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Password"
+                  [(ngModel)]="password"
+                  type="password"
+                  name="password"
+                  required
+                />
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary">Login</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="text-center" *ngIf="isInvalidLogin">
+  <h4 style="color: red">Wrong credentials</h4>
+  <p>
+    DUMMY USER: <br />
+    User: admin <br />
+    Passowrd: admin
+  </p>
 </div>

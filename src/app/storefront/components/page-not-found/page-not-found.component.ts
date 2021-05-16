@@ -13,8 +13,4 @@ export class PageNotFoundComponent implements OnInit {
   ngOnInit(){
   }
 
-  backToHome(){
-    this.router.navigateByUrl('/home');
-  }
-
 }

@@ -1,47 +1,76 @@
 [
   {
     "id": "1",
-    "name": "M31 Dual Sim Phone",
-    "brand": "Samsung",
-    "color": "Navy Blue",
-    "price": 15000,
-    "gender": "M",
-    "image": "assets/images/products_images/Product_1.jpg"
+    "name": "H&M T Shirt",
+    "brand": "NIKE",
+    "description" : "Off white T Shirt",
+    "price": 900,
+    "gender": "W",
+    "image": "assets/images/products_images/H&M_T-shirt.jpg"
   },
   {
     "id": "2",
-    "name": "T-Shirt",
-    "brand": "Duke",
-    "color": "Black",
-    "price": 800,
-    "gender": "M",
-    "image": "assets/images/products_images/Product_2.jpg"
+    "name": "T Shirt",
+    "brand": "H&M",
+    "description" : "Printed Nike T Shirt",
+    "price": 500,
+    "gender": "W",
+    "image": "assets/images/products_images/T-shirt_G.jpg"
   },
   {
     "id": "3",
-    "name": "Sports Shoes",
-    "brand": "Reebok",
-    "color": "White",
-    "price": 3500,
-    "gender": "W",
-    "image" : "assets/images/products_images/Product_5.jpg"
+    "name": "Nike AIR",
+    "brand": "NIKE",
+    "description" : "Funky Nike Air shoe",
+    "price": 2600,
+    "gender": "M",
+    "image" : "assets/images/products_images/nike_shoes.jpg"
   },
   {
     "id": "4",
-    "name": "Moto G6 Plus Phone",
-    "brand": "Motorola",
-    "color": "Black",
-    "price": 20000,
-    "gender": "M",
-    "image": "assets/images/products_images/Product_3.jpg"
+    "name": "Sweater",
+    "brand": "H&M",
+    "description" : "Cotton stylish sweater",
+    "price": 2500,
+    "gender": "W",
+    "image" : "assets/images/products_images/H&M_sweater.jpg"
   },
   {
     "id": "5",
-    "name": "Jacket",
-    "brand": "Woodland",
-    "color": "Black",
-    "price": 6000,
+    "name": "Hoody",
+    "brand": "Addidas",
+    "description" : "Comfy hoody",
+    "price": 2500,
     "gender": "W",
-    "image" : "assets/images/products_images/Product_6.jpg"
+    "image" : "assets/images/products_images/hoody_G.jpg"
+  },
+
+  {
+    "id": "6",
+    "name": "Hoody",
+    "brand": "H&M",
+    "description" : "Comfy hoody",
+    "price": 1500,
+    "gender": "Unisex",
+    "image" : "assets/images/products_images/hoody_M.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Men COL",
+    "brand": "Addidas",
+    "description" : "Mens Collection in one",
+    "price": 2500,
+    "gender": "M",
+    "image" : "assets/images/products_images/Col_men.jpg"
+  },
+  {
+    "id": "8",
+    "name": "Nike T Shirt",
+    "brand": "NIKE",
+    "description" : "Printed Nike T Shirt",
+    "price": 600,
+    "gender": "M",
+    "image": "assets/images/products_images/nike_T-shirt.jpg"
   }
+
 ]

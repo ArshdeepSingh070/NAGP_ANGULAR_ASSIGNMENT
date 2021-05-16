@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * Component for main page on the site
+ */
 @Component({
   selector: 'ecom-main-page',
   templateUrl: './main-page.component.html',

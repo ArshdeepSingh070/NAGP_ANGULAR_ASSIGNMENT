@@ -1,0 +1,26 @@
+<ecom-nav-bar></ecom-nav-bar>
+<div class="card-header text-center">
+  {{ pageTitle }}
+</div>
+
+<div class="products__container">
+  <div *ngFor="let product of ProductsList">
+    <mat-card
+      class="ecom-card m-auto"
+      [routerLink]="['/product/' + product.id]"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image class="image-cls" [src]="product.image" alt="" />
+      <mat-card-content>
+        <p></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" (click)="viewProduct(product.id)">
+          VIEW
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
