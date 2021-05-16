@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Github link for the code
+https://github.com/ArshdeepSingh070/NAGP_ANGULAR_ASSIGNMENT
+
+## Netlify link for the deployed site
+https://tender-nightingale-86d30d.netlify.app/
+
+## Attempted Bonus points
+implemented the simple category tree for the products based on the gender type
+
+## Assumptions and added features
+
+-> Created dummy customer for the authentication purpose
+   Ex: 
+      userid:  admin
+      password: admin
+
+-> Added cart icon highlighter to indicate products in cart 
+-> Category Tree
+
